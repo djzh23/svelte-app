@@ -5,12 +5,17 @@
 	import NewsPage from './NewsPage.svelte';
 	import Todos from './Todos.svelte';
 	import Peekcolor from './peekComponents/Peekcolor.svelte';
+	import Clock from './Clock.svelte';
+	import Galerie from './Galerie.svelte';
+
+	import { AppBar, Divider, Button, MaterialApp } from "svelte-materialify";
 	
 	const webpages = [
 		{ name: "Home", component: HomePage },
 		{ name: "News", component: NewsPage },
 		{ name: "Todos", component: Todos },
-		{ name: "Peekcolor", component: Peekcolor }
+		{ name: "Peekcolor", component: Peekcolor },
+		{name: "Galerie", component:Galerie}
 	];
 	
 	// Loads an object in webpages array
@@ -23,15 +28,20 @@
 </script>
 
 
-{#each webpages as webpageObj}
+	<!-- <span slot="title"> SvlteApp </span> -->
+	{#each webpages as webpageObj}
 	<button class="tablink" 
 					title={webpageObj.name}
 					on:click={() => loadPage(webpageObj)}>{webpageObj.name}</button>
-{/each}
+	{/each}
+	<div class="content-box"><Clock></Clock></div>
 
+  
 
 <!-- Loaded component/webpage -->
 <svelte:component this={selectedPage.component} />
+
+
 
 
 <style>
@@ -47,7 +57,7 @@
 		border: .5px solid #444;
 		border-radius: 0;
 		cursor: pointer;
-		padding: 14px 16px;
+		/* padding: 14px 16px; */
 		font-size: 17px;
 		width: 25%;
 	}
