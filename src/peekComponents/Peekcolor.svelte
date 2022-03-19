@@ -8,17 +8,18 @@ function selectColor(colorNum, colors){
 function chBackcolor() {
    document.body.style.background = selectColor(Math.floor(Math.random() * 999), 10);;
 }	
+function toNormal() {
+   document.body.style.background = "white";
+}	
+// import { Button } from 'sveltestrap';
+import {  Button } from 'svelte-materialify';
 </script>
 
-		<button style="display: flex;
-		justify-content: center;
-		align-items: center;
-		height: 50px;
-		border:5px solid blue;
-		font-size: x-large;
-		" on:click={chBackcolor}>
-			5tar LOUN|FARBE 3AFAK!
-		</button>
+
+<Button class="orange white-text" on:click={chBackcolor}>5tar LOUN|FARBE 3AFAK!</Button>
+<p></p>
+<Button class="grey black-text" on:click={toNormal}>NORMAL PLease!</Button>
+
 
 
 

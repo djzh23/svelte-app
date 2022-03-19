@@ -1,6 +1,9 @@
 <div class="header">
-  <h1>LIMADA NA7NOU HOUNA !</h1>
-  <p>A website created by IDFKN.</p>
+	
+	<h1><q> LIMADA NA7NOU HOUNA .. &#129419; !</q></h1>
+
+  <p><i>&#128049; said by IDFKN.</i></p>
+  
 </div>
 
 <!-- <div class="navbar">
@@ -20,9 +23,13 @@
 	   Card,
 	   Subheader,
 	   Avatar, MaterialApp } from 'svelte-materialify';
+
+	import GifComponent from './gifComponent.svelte';
+
    </script>
-   
-   <MaterialApp>
+
+   <GifComponent></GifComponent>
+   <!-- <MaterialApp>
    <Card>
 	 <List>
 	   <Subheader>Features</Subheader>
@@ -51,7 +58,7 @@
 	   </ListItem>
 	 </List>
    </Card>
-   </MaterialApp>
+   </MaterialApp> -->
 
 <div class="footer">
   <h2>Footer</h2>
@@ -59,6 +66,7 @@
 
 
 <style>
+	
 	* {
 		box-sizing: border-box;
 	}
