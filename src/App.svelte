@@ -1,14 +1,12 @@
 <script>
-	// https://svelte.dev/examples#svelte-component
-	// https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_full_page_tabs
 	import HomePage from './HomePage.svelte';
-	import NewsPage from './NewsPage.svelte';
 	import Todos from './Todos.svelte';
 	import Peekcolor from './peekComponents/Peekcolor.svelte';
-	
+	import Galerie from './Galerie.svelte';
+
 	const webpages = [
 		{ name: "Home", component: HomePage },
-		{ name: "News", component: NewsPage },
+		{ name: "Galerie", component: Galerie },
 		{ name: "Todos", component: Todos },
 		{ name: "Peekcolor", component: Peekcolor }
 	];

@@ -1,4 +1,6 @@
+<!-- SCRIPT -->
 <script>
+import {  Button } from 'svelte-materialify';
 
 function selectColor(colorNum, colors){
     if (colors < 1) colors = 1; // defaults to one color - avoid divide by zero
@@ -11,15 +13,53 @@ function chBackcolor() {
 function toNormal() {
    document.body.style.background = "white";
 }	
-// import { Button } from 'sveltestrap';
-import {  Button } from 'svelte-materialify';
+
 </script>
 
+<!-- HTML -->
+<div class="wrapper">
+	<div class="link_wrapper">
+		<Button class="orange white-text" on:click={chBackcolor}><a>5tar LOUN | FARBE 3AFAK !</a></Button>
+	</div>
+		<p></p>
+		<Button class="grey black-text" on:click={toNormal}><a>NORMAL PLease !</a></Button>
 
-<Button class="orange white-text" on:click={chBackcolor}>5tar LOUN|FARBE 3AFAK!</Button>
-<p></p>
-<Button class="grey black-text" on:click={toNormal}>NORMAL PLease!</Button>
+</div>
 
+<!-- STYLE -->
+<style>
+	.wrapper{
+	  position: fixed;
 
+	  top: 50%;
+	  left: 50%;
+	  transform: translate(-50%, -50%);
+	}
+	
+	.link_wrapper{
+		height: 50px;
+	  position: relative;
+	}
+	
+	a{
+	  display: block;
 
+	  width: 450px;
+	  line-height: 80px;
+	  font-weight: bold;
+	  text-decoration: none;
+	  /* background: #333; */
+	  text-align: center;
+	  color: #fff;
+	  text-transform: uppercase;
+	  letter-spacing: 1px;
+	  transition: all .35s;
+	}
 
+	a:hover{
+	  width: 300px;
+	  background: transparent;
+	  color: #d9f39d;
+	}
+	
+  </style>

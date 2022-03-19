@@ -1,6 +1,7 @@
 <script>
 	import { quintOut } from 'svelte/easing';
 	import { crossfade } from 'svelte/transition';
+	import { Button, MaterialApp,TextField } from 'svelte-materialify';
 
 	const [send, receive] = crossfade({
 		duration: d => Math.sqrt(d * 200),
@@ -53,11 +54,15 @@
 	}
 </script>
 
+<div class="wrapper">
+	<TextField  placeholder=" ... what needs to be done?  " on:keydown={e => e.key === 'Enter' && add(e.target)}  solo />
 <div class='board'>
-	<input
-		placeholder="what needs to be done?"
+		
+
+	<!-- <input
+		placeholder=" ... what needs to be done?  "
 		on:keydown={e => e.key === 'Enter' && add(e.target)}
-	>
+	> -->
 
 	<div class='left'>
 		<h2>todo</h2>
@@ -68,7 +73,7 @@
 			>
 				<input type=checkbox on:change={() => mark(todo, true)}>
 				{todo.description}
-				<button on:click="{() => remove(todo)}">remove</button>
+				<button on:click="{() => remove(todo)}"></button>
 			</label>
 		{/each}
 	</div>
@@ -83,13 +88,23 @@
 			>
 				<input type=checkbox checked on:change={() => mark(todo, false)}>
 				{todo.description}
-				<button on:click="{() => remove(todo)}">remove</button>
+				<button on:click="{() => remove(todo)}"></button>
 			</label>
 		{/each}
 	</div>
 </div>
-
+</div>
 <style>
+
+.wrapper{
+	  position: fixed;
+
+	  top: 50%;
+	  left: 50%;
+	  transform: translate(-50%, -50%);
+	}
+	
+
 	.board {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
