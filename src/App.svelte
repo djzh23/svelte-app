@@ -6,7 +6,7 @@
 	import Todos from './Todos.svelte';
 	import Peekcolor from './peekComponents/Peekcolor.svelte';
 	import Clock from './Clock.svelte';
-	import Galerie from './Galerie.svelte';
+
 
 	import { AppBar, Divider, Button, MaterialApp } from "svelte-materialify";
 	
@@ -14,8 +14,7 @@
 		{ name: "Home", component: HomePage },
 		{ name: "News", component: NewsPage },
 		{ name: "Todos", component: Todos },
-		{ name: "Peekcolor", component: Peekcolor },
-		{name: "Galerie", component:Galerie}
+		{ name: "Peekcolor", component: Peekcolor }
 	];
 	
 	// Loads an object in webpages array
