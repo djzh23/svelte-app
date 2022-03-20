@@ -25,11 +25,11 @@
 
 	let todos = [
 		{ id: uid++, done: false, description: 'write some docs' },
-		{ id: uid++, done: false, description: 'start writing blog post' },
-		{ id: uid++, done: true,  description: 'buy some milk' },
-		{ id: uid++, done: false, description: 'mow the lawn' },
-		{ id: uid++, done: false, description: 'feed the turtle' },
-		{ id: uid++, done: false, description: 'fix some bugs' },
+		{ id: uid++, done: false, description: 'elm' },
+		{ id: uid++, done: true,  description: 'svelte-design' },
+		{ id: uid++, done: false, description: 'svelte-P2P-Dapp' },
+		{ id: uid++, done: false, description: 'svelte-login' },
+		{ id: uid++, done: false, description: 'svelte-chat' },
 	];
 
 	function add(input) {

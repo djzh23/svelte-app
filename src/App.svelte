@@ -3,13 +3,20 @@
 	import Todos from './Todos.svelte';
 	import Peekcolor from './peekComponents/Peekcolor.svelte';
 	import Galerie from './Galerie.svelte';
+	import CamComponent from './CamComponent.svelte';
+	// import Sign from './Sign.svelte';
+	import AppChatroom from './AppChatroom.svelte';
 
 	const webpages = [
 		{ name: "Home", component: HomePage },
 		{ name: "Galerie", component: Galerie },
 		{ name: "Todos", component: Todos },
-		{ name: "Peekcolor", component: Peekcolor }
+		{ name: "Peekcolor", component: Peekcolor },
+		{ name: "AppChatroom", component: AppChatroom },
+		{ name: "CamComponent", component: CamComponent }
 	];
+	
+	// { name: "CamComponent", component: CamComponent },
 	
 	// Loads an object in webpages array
 	let selectedPage = webpages[0];
@@ -42,12 +49,14 @@
 		float: left;
 		border: none;
 		outline: none;
-		border: .5px solid #444;
+		border: 0px solid #444;
 		border-radius: 0;
 		cursor: pointer;
 		padding: 14px 16px;
 		font-size: 17px;
-		width: 25%;
+		/*------------------- Menu TABS --------------------*/
+		/* width: 20%; */
+		width: 16.66%;
 	}
 
 	.tablink:hover {

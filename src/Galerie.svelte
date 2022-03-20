@@ -14,7 +14,7 @@
 <div class="photos">
 	{#each photos as photo}
 		<figure>
-			<img src={photo.thumbnailUrl} alt={photo.title}>
+			<img alt="iya" src="https://i.ibb.co/kyNytVH/photo-2021-12-18-18-46-20.jpg">
 			<figcaption>{photo.title}</figcaption>
 		</figure>
 	{:else}

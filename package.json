@@ -23,6 +23,9 @@
   },
   "dependencies": {
     "@mdi/js": "6.5.95",
+    "gun": "^0.2020.1236",
+    "rxfirebase": "^0.0.1-alpha.2",
+    "rxjs": "^5.5.12",
     "sirv-cli": "^2.0.0",
     "sveltestrap": "^5.9.0"
   }
