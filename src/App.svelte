@@ -1,18 +1,23 @@
 <script>
 	// https://svelte.dev/examples#svelte-component
 	// https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_full_page_tabs
+
+	import 'firebase/firestore';
+
+
 	import HomePage from './HomePage.svelte';
 	import NewsPage from './NewsPage.svelte';
 	import Todos from './Todos.svelte';
 	import Peekcolor from './peekComponents/Peekcolor.svelte';
-	import Clock from './Clock.svelte';
+	// import Clock from './Clock.svelte';
+	import Chatroom from "./ChatRoom.svelte";
 
 
 	import { AppBar, Divider, Button, MaterialApp } from "svelte-materialify";
 	
 	const webpages = [
 		{ name: "Home", component: HomePage },
-		{ name: "News", component: NewsPage },
+		{ name: "Chatroom", component: Chatroom },
 		{ name: "Todos", component: Todos },
 		{ name: "Peekcolor", component: Peekcolor }
 	];
@@ -33,7 +38,6 @@
 					title={webpageObj.name}
 					on:click={() => loadPage(webpageObj)}>{webpageObj.name}</button>
 	{/each}
-	<div class="content-box"><Clock></Clock></div>
 
   
 
