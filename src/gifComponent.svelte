@@ -3,29 +3,18 @@
 
 	let search = '';
 	let loading = false;
-    // 'https://api.giphy.com/v1/gifs/search?api_key=yAQFKnN1xs5b6lXKQitvudVg5WadxtH0&limit=10&offset=0&rating=g&lang=en&q='
+ 
+    const API_URL = 'https://api.giphy.com/v1/gifs/search?api_key=JnxTmEGKXjZeUKBzRjTQoMDg8OX8pS5U&rating=pg&limit=15&q=';
+    let gifs = [];
 
-    async function getApi() {
-
-        let response = await fetch("https://api.mocki.io/v1/7ce1d76a");
-                let users = await response.json();
-    return users;
-  }
-  const promise = getApi();
-  
-//   https://app.sportdataapi.com/api/v1/soccer/countries?apikey=268faa80-a866-11ec-9bf2-c70f0d52f7c5&continent=Europe
-	const API_URL ='https://www.scorebat.com/video-api/v3/feed/?token=MTU5MTJfMTY0Nzc5MzE5NF82MjJhNDYzZjkyNWJmMjgzZGI5NGZmYzU2MWJmMmE5ZjYyYmY5MjRk';
-	let gifs = [];
 	async function formSubmitted(event) {
 		event.preventDefault();
 		loading = true;
 		gifs = [];
-		const url = `${API_URL}`;
+		const url = `${API_URL}${search}`;
 		const response = await fetch(url);
-        console.log(response);
 		const json = await response.json();
-        console.log(json.data);
-		// gifs = json.data.map(gif => gif.images.fixed_height.url);
+		gifs = json.data.map(gif => gif.images.fixed_height.url);
 		loading = false;
 	}
 
@@ -65,14 +54,14 @@ img {
 <!-- HTML -->
 
 <div class="formdiv" >
-    <h1 style="text-align: center; font-size:xx-large;"><b>&#127820; GIFs</b>'khaloutabhjcbjvd </h1>
+    <h1 style="text-align: center; font-size:xx-large;"><b>&#127820; GIFs</b>' khaletni </h1>
     <form on:submit={formSubmitted}>
-        
-        <div class="labeldiv"   style="text-align: letf ;">
+        <div class="labeldiv"   style="text-align: center ;">
             <MaterialApp>
             <label for="search"  style="font-family: 'Nunito', sans-serif; color: white; font-weight: bolder;">Search</label>
             <MaterialApp>
                 <TextField bind:value={search} id="search" name="search" placeholder="mchicha ... ?"  solo />
+                <p>
             </MaterialApp>
                 <Button type="submit" class="primary-color">Hop</Button>
             </MaterialApp>
@@ -90,14 +79,3 @@ img {
 	{/each}
 </div>
 
-<div>
-    {#await promise}
-        <p>Loading...</p>
-    {:then user}
-        {#each user as user}
-        <p>Name is {user.name}, ID: {user.id}</p>
-        {/each}
-    {:catch error}
-        <p style="color: red">{error.message}</p>
-    {/await}
-    </div>

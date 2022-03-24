@@ -3,17 +3,32 @@
 	import Todos from './Todos.svelte';
 	import Peekcolor from './peekComponents/Peekcolor.svelte';
 	import Galerie from './Galerie.svelte';
-	import CamComponent from './CamComponent.svelte';
+	// import CamComponent from './CamComponent.svelte';
 	// import Sign from './Sign.svelte';
-	import AppChatroom from './AppChatroom.svelte';
+	import Chatroom from './Chatroom.svelte';
+
+		import {auth,googleProvider} from "./firebase";
+		import {authState} from "rxfire/auth";
+		import Profile from "./Profile.svelte";
+	
+	export let user;
+
+	const unsubscribe = authState(auth).subscribe(usr => user = usr);
+
+	function login(){
+		auth.signInWithPopup(googleProvider);
+		
+	}
+	function logout(){
+		auth.signOut();
+	}
 
 	const webpages = [
 		{ name: "Home", component: HomePage },
 		{ name: "Galerie", component: Galerie },
 		{ name: "Todos", component: Todos },
-		{ name: "Peekcolor", component: Peekcolor },
-		{ name: "AppChatroom", component: AppChatroom },
-		{ name: "CamComponent", component: CamComponent }
+		{ name: "PKcolor", component: Peekcolor },
+		{ name: "Chat", component: Chatroom }
 	];
 	
 	// { name: "CamComponent", component: CamComponent },
@@ -28,16 +43,35 @@
 </script>
 
 
-{#each webpages as webpageObj}
-	<button class="tablink" 
-					title={webpageObj.name}
-					on:click={() => loadPage(webpageObj)}>{webpageObj.name}</button>
-{/each}
+
+<header class="container">  
+
+{#if user} 
+	
+	{#each webpages as webpageObj}
+	<div class="topright"><Profile {...user}/></div>
+
+		<button class="tablink" 
+						title={webpageObj.name}
+						on:click={() => loadPage(webpageObj)}>{webpageObj.name}</button>
+	{/each}
+{:else}
+	<div class="login-form" style="text-align: center;">
+		<button on:click={login} style=" background-color: grey;">
+			<i class="fa fa-google"></i>
+			Sign In with Google
+		</button>
+	</div>
+{/if}
+</header>
 
 
-<!-- Loaded component/webpage -->
-<svelte:component this={selectedPage.component} />
+{#if user } 
+	<!-- Loaded component/webpage -->
+	<button on:click={logout} style=" background-color: yellow;"> LOGOUT  </button>
+	<svelte:component this={selectedPage.component}/>
 
+{/if}
 
 <style>
 	* {box-sizing: border-box}
@@ -55,13 +89,24 @@
 		padding: 14px 16px;
 		font-size: 17px;
 		/*------------------- Menu TABS --------------------*/
-		/* width: 20%; */
-		width: 16.66%;
+		width: 20%;
+		/* width: 16.66%; */
 	}
 
 	.tablink:hover {
 		background-color: #777;
 	}
+
+	.container {
+		position: relative;
+		}
+
+	.topright {
+		position: absolute;
+		top: 50px;
+		left: 35%;
+		font-size: 18px;
+		}
 
 
 </style>

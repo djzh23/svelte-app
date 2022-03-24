@@ -59,10 +59,8 @@
 	 </List>
    </Card>
    </MaterialApp> -->
-   <iframe allowfullscreen='true' frameborder='0' height='620px' scrolling='' src='https://extra.yalla-shoot-kora.com/p/second-3.html?view=embed' style='max-width:900px' width='100%'></iframe>
-
 <div class="footer">
-  <h2>Footer</h2>
+  <h2>Footer und Gedöns...</h2>
 </div>
 
 

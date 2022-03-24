@@ -9,8 +9,8 @@
 	});
 </script>
 
-<h1>Photo album</h1>
-
+<h1 style="text-align: center;">Photo album &#128248;</h1>
+<p></p>
 <div class="photos">
 	{#each photos as photo}
 		<figure>
