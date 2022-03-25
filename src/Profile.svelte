@@ -1,5 +1,5 @@
 <script>
-    export let displayName;
+    export let displayName ="";
 </script>
 
-<h3>Welcome {displayName} ! </h3>
+<p><i>Welcome {displayName} !</i> </p>

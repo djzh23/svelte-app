@@ -19,10 +19,10 @@ function toNormal() {
 <!-- HTML -->
 <div class="wrapper">
 	<div class="link_wrapper">
-		<Button class="orange white-text" on:click={chBackcolor}><a>5tar LOUN | FARBE 3AFAK !</a></Button>
+		<Button class="orange white-text" on:click={chBackcolor}>5tar LOUN | FARBE 3AFAK !</Button>
 	</div>
 		<p></p>
-		<Button class="grey black-text" on:click={toNormal}><a>NORMAL PLease !</a></Button>
+		<Button class="grey black-text" on:click={toNormal}>NORMAL PLease !</Button>
 
 </div>
 

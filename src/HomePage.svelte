@@ -1,64 +1,14 @@
-<div class="header">
-	
-	<h1><q> LIMADA NA7NOU HOUNA .. &#129419; !</q></h1>
-
-  <p><i>&#128049; said by IDFKN.</i></p>
-  
-</div>
-
-<!-- <div class="navbar">
-  <a href="#a">Link</a>
-  <a href="#s">Link</a>
-  <a href="#d">Link</a>
-  <a href="#current-blog-post" class="right">Blog</a>
-</div> -->
-
-
-
 <script>
+import GifComponent from './gifComponent.svelte';
 
-	import {  List,
-	   ListItem,
-	   Divider,
-	   Card,
-	   Subheader,
-	   Avatar, MaterialApp } from 'svelte-materialify';
+</script>
 
-	import GifComponent from './gifComponent.svelte';
+<div class="header">
+	<h1><q> LIMADA NA7NOU HOUNA .. &#129419; !</q></h1>
+	<p><i>&#128049; said by IDFKN.</i></p>
+</div>
+<GifComponent></GifComponent>
 
-   </script>
-
-   <GifComponent></GifComponent>
-   <!-- <MaterialApp>
-   <Card>
-	 <List>
-	   <Subheader>Features</Subheader>
-	   <ListItem>
-		 <div slot="prepend">
-		   <Avatar><img src="//picsum.photos/100?random=1" alt="Avatar" /></Avatar>
-		 </div>
-		 Grosserie
-		 <span slot="subtitle"> <b>Einküfen</b> - T9adia </span>
-	   </ListItem>
-	   <Divider inset />
-	   <ListItem>
-		 <div slot="prepend">
-		   <Avatar><img src="//picsum.photos/100?random=2" alt="Avatar" /></Avatar>
-		 </div>
-		 Galerie
-		 <span slot="subtitle"> <b>Tsawer</b> - Fun </span>
-	   </ListItem>
-	   <Divider inset />
-	   <ListItem>
-		 <div slot="prepend">
-		   <Avatar><img src="//picsum.photos/100?random=3" alt="Avatar" /></Avatar>
-		 </div>
-		 ToDo
-		 <span slot="subtitle"> <b>Sebastian Currywurst</b> - Darija Matalan </span>
-	   </ListItem>
-	 </List>
-   </Card>
-   </MaterialApp> -->
 <div class="footer">
   <h2>Footer und Gedöns...</h2>
 </div>

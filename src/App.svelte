@@ -3,13 +3,10 @@
 	import Todos from './Todos.svelte';
 	import Peekcolor from './peekComponents/Peekcolor.svelte';
 	import Galerie from './Galerie.svelte';
-	// import CamComponent from './CamComponent.svelte';
-	// import Sign from './Sign.svelte';
 	import Chatroom from './Chatroom.svelte';
-
-		import {auth,googleProvider} from "./firebase";
-		import {authState} from "rxfire/auth";
-		import Profile from "./Profile.svelte";
+	import {auth,googleProvider} from "./firebase";
+	import {authState} from "rxfire/auth";
+	import Profile from "./Profile.svelte";
 	
 	export let user;
 
@@ -31,8 +28,6 @@
 		{ name: "Chat", component: Chatroom }
 	];
 	
-	// { name: "CamComponent", component: CamComponent },
-	
 	// Loads an object in webpages array
 	let selectedPage = webpages[0];
 	$: console.dir(selectedPage)
@@ -42,38 +37,37 @@
 
 </script>
 
-
+{#if user } 
+	<!-- Loaded component/webpage -->
+	<button on:click={logout} style=" background-color: yellow;"> LOGOUT  </button>	
+	<div style="text-align: right;">
+		<Profile {...user}/>
+	</div>
+{/if}
 
 <header class="container">  
-
 {#if user} 
-	
 	{#each webpages as webpageObj}
-	<div class="topright"><Profile {...user}/></div>
-
 		<button class="tablink" 
 						title={webpageObj.name}
 						on:click={() => loadPage(webpageObj)}>{webpageObj.name}</button>
 	{/each}
+	<svelte:component this={selectedPage.component}/>
 {:else}
-	<div class="login-form" style="text-align: center;">
-		<button on:click={login} style=" background-color: grey;">
-			<i class="fa fa-google"></i>
-			Sign In with Google
-		</button>
-	</div>
+<div class="login-form" style="text-align: center;">
+	<button on:click={login} style=" background-color: grey;">
+		<i class="fa fa-google"></i>
+		Sign In with Google
+	</button>
+</div>
 {/if}
 </header>
 
 
-{#if user } 
-	<!-- Loaded component/webpage -->
-	<button on:click={logout} style=" background-color: yellow;"> LOGOUT  </button>
-	<svelte:component this={selectedPage.component}/>
 
-{/if}
 
 <style>
+
 	* {box-sizing: border-box}
 
 	/* Style tab links */
@@ -110,3 +104,4 @@
 
 
 </style>
+
