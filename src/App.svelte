@@ -5,12 +5,13 @@
 	import NewsPage from './NewsPage.svelte';
 	import Todos from './Todos.svelte';
 	import Peekcolor from './peekComponents/Peekcolor.svelte';
+	import Navbar from './components/layout/Navbar.svelte';
 	
 	const webpages = [
-		{ name: "Home", component: HomePage },
-		{ name: "News", component: NewsPage },
-		{ name: "Todos", component: Todos },
-		{ name: "Peekcolor", component: Peekcolor }
+		{ name: "Home", component: HomePage, icon: "🏠" },
+		{ name: "News", component: NewsPage, icon: "📰" },
+		{ name: "Todos", component: Todos, icon: "✓" },
+		{ name: "Peekcolor", component: Peekcolor, icon: "🎨" }
 	];
 	
 	// Loads an object in webpages array
@@ -22,39 +23,27 @@
 
 </script>
 
+<Navbar {webpages} {selectedPage} onPageSelect={loadPage} />
 
-{#each webpages as webpageObj}
-	<button class="tablink" 
-					title={webpageObj.name}
-					on:click={() => loadPage(webpageObj)}>{webpageObj.name}</button>
-{/each}
-
-
-<!-- Loaded component/webpage -->
-<svelte:component this={selectedPage.component} />
-
+<main class="main-content">
+	<svelte:component this={selectedPage.component} />
+</main>
 
 <style>
-	* {box-sizing: border-box}
-
-	/* Style tab links */
-	.tablink {
-		background-color: #555;
-		color: white;
-		float: left;
-		border: none;
-		outline: none;
-		border: .5px solid #444;
-		border-radius: 0;
-		cursor: pointer;
-		padding: 14px 16px;
-		font-size: 17px;
-		width: 25%;
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
 	}
 
-	.tablink:hover {
-		background-color: #777;
+	body {
+		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		background-color: #f5f5f5;
 	}
 
-
+	.main-content {
+		max-width: 1200px;
+		margin: 80px auto 0;
+		padding: 2rem;
+	}
 </style>

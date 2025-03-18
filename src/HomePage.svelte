@@ -13,45 +13,76 @@
 
 
 <script>
+	import Card from './components/common/Card.svelte';
+	import { List, ListItem, Divider, Subheader, Avatar, MaterialApp } from 'svelte-materialify';
+</script>
 
-	import {  List,
-	   ListItem,
-	   Divider,
-	   Card,
-	   Subheader,
-	   Avatar, MaterialApp } from 'svelte-materialify';
-   </script>
-   
-   <MaterialApp>
-   <Card>
-	 <List>
-	   <Subheader>Features</Subheader>
-	   <ListItem>
-		 <div slot="prepend">
-		   <Avatar><img src="//picsum.photos/100?random=1" alt="Avatar" /></Avatar>
-		 </div>
-		 Grosserie
-		 <span slot="subtitle"> <b>Einküfen</b> - T9adia </span>
-	   </ListItem>
-	   <Divider inset />
-	   <ListItem>
-		 <div slot="prepend">
-		   <Avatar><img src="//picsum.photos/100?random=2" alt="Avatar" /></Avatar>
-		 </div>
-		 Galerie
-		 <span slot="subtitle"> <b>Tsawer</b> - Fun </span>
-	   </ListItem>
-	   <Divider inset />
-	   <ListItem>
-		 <div slot="prepend">
-		   <Avatar><img src="//picsum.photos/100?random=3" alt="Avatar" /></Avatar>
-		 </div>
-		 ToDo
-		 <span slot="subtitle"> <b>Sebastian Currywurst</b> - Darija Matalan </span>
-	   </ListItem>
-	 </List>
-   </Card>
-   </MaterialApp>
+<MaterialApp>
+	<div class="hero">
+		<div class="hero-content">
+			<h1>Welcome to Our App</h1>
+			<p>Your one-stop solution for managing tasks and staying organized</p>
+		</div>
+	</div>
+
+	<div class="features-grid">
+		<Card title="Main Features" icon="✨">
+			<List>
+				<ListItem>
+					<div slot="prepend">
+						<Avatar><img src="//picsum.photos/100?random=1" alt="Shopping" /></Avatar>
+					</div>
+					Shopping List
+					<span slot="subtitle">Manage your grocery shopping efficiently</span>
+				</ListItem>
+				<Divider inset />
+				<ListItem>
+					<div slot="prepend">
+						<Avatar><img src="//picsum.photos/100?random=2" alt="Gallery" /></Avatar>
+					</div>
+					Photo Gallery
+					<span slot="subtitle">View and organize your memories</span>
+				</ListItem>
+				<Divider inset />
+				<ListItem>
+					<div slot="prepend">
+						<Avatar><img src="//picsum.photos/100?random=3" alt="Todo" /></Avatar>
+					</div>
+					Todo List
+					<span slot="subtitle">Keep track of your daily tasks</span>
+				</ListItem>
+			</List>
+		</Card>
+
+		<Card title="Quick Actions" icon="⚡">
+			<List>
+				<ListItem>
+					<div slot="prepend">
+						<Avatar><span>📝</span></Avatar>
+					</div>
+					Create New Todo
+					<span slot="subtitle">Add a new task to your list</span>
+				</ListItem>
+				<Divider inset />
+				<ListItem>
+					<div slot="prepend">
+						<Avatar><span>📸</span></Avatar>
+					</div>
+					Upload Photos
+					<span slot="subtitle">Add new photos to your gallery</span>
+				</ListItem>
+				<Divider inset />
+				<ListItem>
+					<div slot="prepend">
+						<Avatar><span>🛒</span></Avatar>
+					</div>
+					New Shopping List
+					<span slot="subtitle">Start a new shopping list</span>
+				</ListItem>
+			</List>
+		</Card>
+	</div>
+</MaterialApp>
 
 <div class="footer">
   <h2>Footer</h2>
@@ -156,6 +187,59 @@
 		.navbar a {
 			float: none;
 			width: 100%;
+		}
+	}
+
+	.hero {
+		background: linear-gradient(135deg, #1976d2, #64b5f6);
+		color: white;
+		padding: 4rem 2rem;
+		text-align: center;
+		margin-bottom: 2rem;
+		border-radius: 8px;
+	}
+
+	.hero-content {
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	.hero h1 {
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
+	}
+
+	.hero p {
+		font-size: 1.2rem;
+		opacity: 0.9;
+	}
+
+	.features-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+		margin-top: 2rem;
+	}
+
+	:global(.mdc-list-item) {
+		padding: 1rem;
+	}
+
+	:global(.mdc-list-item__text) {
+		padding: 0 1rem;
+	}
+
+	@media (max-width: 768px) {
+		.hero {
+			padding: 3rem 1rem;
+		}
+
+		.hero h1 {
+			font-size: 2rem;
+		}
+
+		.features-grid {
+			grid-template-columns: 1fr;
 		}
 	}
 </style>
