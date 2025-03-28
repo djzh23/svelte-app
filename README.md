@@ -3,7 +3,7 @@
 A basic and modern task management application built with Svelte Framework, for personal use. 
 
 ## 🌐 Live Demo
-Visit the live application at: [https://mysite.netlify.app/](https://news-zi.netlify.app/)
+Visit the live application at: [https://news-zi.netlify.app/](https://news-zi.netlify.app/)
 
 ## ✨ Features
 
