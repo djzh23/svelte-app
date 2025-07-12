@@ -1,19 +1,19 @@
-# Modern Svelte Task Management App
+# Moderne Svelte Aufgabenverwaltungs-App
 
-A basic and modern task management application built with Svelte Framework, for personal use. 
+Eine einfache und moderne Aufgabenverwaltungsanwendung, entwickelt mit dem Svelte-Framework für den persönlichen Gebrauch. 
 
 ## 🌐 Live Demo
-Visit the live application at: [https://news-zi.netlify.app/](https://news-zi.netlify.app/)
+Besuche die Live-Anwendung unter: [https://news-zi.netlify.app/](https://news-zi.netlify.app/)
 
 ## ✨ Features
 
-- 🎨 Modern and responsive UI design
-- 📝 Task management system
-- 📸 Photo gallery
-- 🎨 Color picker tool
-- ⚡ Fast and lightweight
+- 🎨 Modernes und responsives UI-Design
+- 📝 Aufgabenverwaltungssystem
+- 📸 Fotogalerie
+- 🎨 Farbwahlauswahl-Tool
+- ⚡ Schnell und ressourcenschonend
 
-## 🛠️ Tech Stack
+## 🛠️ Technologiestack
 
 - Svelte 3
 - Svelte Materialify
@@ -21,66 +21,66 @@ Visit the live application at: [https://news-zi.netlify.app/](https://news-zi.ne
 - PostCSS
 - SASS
 
-## 🚀 Getting Started
+## 🚀 Erste Schritte
 
-### Prerequisites
+### Voraussetzungen
 
-- Node.js (v14 or higher)
-- npm (v6 or higher)
+- Node.js (v14 oder höher)
+- npm (v6 oder höher)
 
 ### Installation
 
-1. Clone the repository:
+1. Repository klonen:
 ```bash
 git clone https://github.com/djzh23/svelte-app.git
 cd svelte-app
 
 ```
 
-2. Install dependencies:
+2. Abhängigkeiten installieren:
 ```bash
 npm install
 ```
 
-3. Fix any audit issues:
+3. Sicherheitswarnungen beheben:
 ```bash
 npm audit fix
 ```
 
-4. Update Rollup plugins (if needed):
+4. Rollup-Plugins aktualisieren (falls erforderlich):
 ```bash
 npm uninstall rollup-plugin-node-resolve rollup-plugin-commonjs
 npm install --save-dev @rollup/plugin-node-resolve @rollup/plugin-commonjs
 npm install
 ```
 
-### Development
+### Entwicklung
 
-To start the development server:
+Um den Entwicklungsserver zu starten:
 
 ```bash
 npm run dev
 ```
 
-The app will be available at `http://localhost:PORT`
+Die App ist dann unter `http://localhost:PORT` erreichbar.
 
-## 📁 Project Structure
+## 📁 Projektstruktur
 
 ```
 src/
 ├── components/
-│   ├── layout/      # Layout components
-│   ├── features/    # Feature-specific components
-│   └── common/      # Reusable components
-├── peekComponents/  # Additional components
-└── App.svelte       # Main application component
+│   ├── layout/      # Layout-Komponenten
+│   ├── features/    # Funktionsspezifische Komponenten
+│   └── common/      # Wiederverwendbare Komponenten
+├── peekComponents/  # Zusätzliche Komponenten
+└── App.svelte       # Hauptkomponente der Anwendung
 ```
 
 ## 🚀 Deployment
 
-This project is configured for easy deployment on Netlify. The `netlify.toml` file includes the necessary build settings and redirects.
+Dieses Projekt ist für eine einfache Bereitstellung auf Netlify konfiguriert. Die Datei `netlify.toml`enthält die notwendigen Build-Einstellungen und Weiterleitungen.
 
-## 🤝 Contributing
+## 🤝 Beiträge
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Beiträge sind willkommen! Reiche gerne einen Pull Request ein.
 
